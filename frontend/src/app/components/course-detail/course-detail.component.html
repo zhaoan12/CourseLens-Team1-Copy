@@ -1,0 +1,23 @@
+<div *ngIf="course" class="course-detail-container">
+  <h2>{{ course.code }} - {{ course.title }}</h2>
+  <p>{{ course.description }}</p>
+
+  <div class="enrollment-details">
+    <h3>Current Enrollment</h3>
+    <div class="enrollment-bar">
+      <div
+        class="enrollment-fill"
+        [style.width.%]="(course.enrollment.current / course.enrollment.capacity) * 100"
+      ></div>
+    </div>
+    <p>
+      {{ course.enrollment.current }} / {{ course.enrollment.capacity }}
+      Enrolled
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <h3>Historical Enrollment Data</h3>
+    <canvas #enrollmentChart></canvas>
+  </div>
+</div>

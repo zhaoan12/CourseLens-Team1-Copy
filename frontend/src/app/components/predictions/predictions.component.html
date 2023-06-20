@@ -1,0 +1,25 @@
+<div class="predictions-container">
+  <h2>Courses Likely to Close Soon</h2>
+  <p>
+    Based on our analysis, the following courses have a high probability of
+    closing within the next 24 hours.
+  </p>
+
+  <div class="course-grid">
+    <div *ngFor="let course of predictedCourses" class="course-card">
+      <a [routerLink]="['/course', course.id]">
+        <h3>{{ course.code }} - {{ course.title }}</h3>
+        <div class="enrollment-bar">
+          <div
+            class="enrollment-fill"
+            [style.width.%]="(course.enrollment.current / course.enrollment.capacity) * 100"
+          ></div>
+        </div>
+        <p>
+          {{ course.enrollment.current }} / {{ course.enrollment.capacity }}
+          Enrolled
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
