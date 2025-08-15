@@ -31,7 +31,7 @@ CourseLens is a web application that provides live University of Toronto course 
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/zhaoan12/(name of repo)
+    git clone https://github.com/zhaoan12/CourseLens-Team1.git
     cd courselens
     ```
 
